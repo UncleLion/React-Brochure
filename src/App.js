@@ -1,10 +1,8 @@
-import Concepts from './components/Concepts';
-import ConceptHeader from './components/ConceptHeader';
-
-import keyConceptsImage from './assets/images/key-concepts.png';
 import componentsImage from './assets/images/components.png';
 import stateImage from './assets/images/state.png';
 import eventsImage from './assets/images/events.png';
+import Header from './components/Header';
+import Concepts from './components/Concepts';
 
 const concepts = [
   {
@@ -30,11 +28,26 @@ const concepts = [
 function App() {
   return (
     <div>
-      <ConceptHeader keyConceptsImage={keyConceptsImage} />
-
-      <Concepts items={concepts} />
+      <Header />
+      <ul id="concepts">
+        <Concepts
+          image={concepts[0].image}
+          title={concepts[0].title}
+          description={concepts[0].description}
+        />
+        <Concepts
+          image={concepts[1].image}
+          title={concepts[1].title}
+          description={concepts[1].description}
+        />
+        <Concepts
+          image={concepts[2].image}
+          title={concepts[2].title}
+          description={concepts[2].description}
+        />
+      </ul>
     </div>
-    );
+  );
 }
 
 export default App;
